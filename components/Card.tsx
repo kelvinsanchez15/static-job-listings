@@ -2,7 +2,8 @@ export default function Card({ job }) {
   return (
     <div
       id="card"
-      className="flex items-center bg-white rounded-md border-l-4 border-cyan p-6 mb-6 shadow-lg"
+      className={`flex items-center bg-white rounded-md 
+      p-6 mb-6 shadow-lg ${job.featured && 'border-l-4 border-cyan'}`}
     >
       <div id="logo" className="mr-5">
         <img src={job.logo} alt="company logo" />
