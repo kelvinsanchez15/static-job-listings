@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <title>Static Job Listings</title>
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
-      <header className="" />
+      <header className=" bg-cyan bg-header-mobile sm:bg-header-desktop bg-center bg-cover h-156px" />
       <div className="w-full p-28">
         {jobs.map((job) => (
           <Card key={job.id} job={job} />

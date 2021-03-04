@@ -17,6 +17,13 @@ module.exports = {
           darkest: 'hsl(180, 14%, 20%)',
         },
       },
+      backgroundImage: (theme) => ({
+        'header-desktop': "url('/images/bg-header-desktop.svg')",
+        'header-mobile': "url('/images/bg-header-mobile.svg')",
+      }),
+      height: {
+        '156px': '156px',
+      },
     },
   },
   variants: {
