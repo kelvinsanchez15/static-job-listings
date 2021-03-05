@@ -19,9 +19,9 @@ const Home: NextPage = () => {
         <title>Static Job Listings</title>
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
-      <header className=" bg-cyan bg-header-mobile sm:bg-header-desktop bg-center bg-cover h-156px mb-12" />
+      <header className="bg-cyan bg-header-mobile sm:bg-header-desktop bg-center bg-cover h-156px mb-12" />
 
-      <div className="w-full px-28">
+      <div className="w-full px-6 lg:px-20 xl:px-40">
         {selectedJobTags.length > 0 && (
           <TagFilter
             selectedJobTags={selectedJobTags}

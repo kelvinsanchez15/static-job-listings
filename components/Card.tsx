@@ -32,11 +32,19 @@ export default function Card({
   return (
     <div
       id="card"
-      className={`flex items-center bg-white rounded-md 
-      p-6 mb-6 shadow-lg ${job.featured && 'border-l-4 border-cyan'}`}
+      className={`flex flex-col lg:flex-row lg:items-center bg-white rounded-md 
+      p-4 lg:p-7 mb-12 lg:mb-6 shadow-lg ${
+        job.featured && 'border-l-4 border-cyan'
+      }`}
     >
-      <div id="logo" className="mr-5">
-        <img src={job.logo} alt="company logo" width="88px" height="88px" />
+      <div id="logo" className="mr-5 -mt-11 lg:mt-0">
+        <img
+          className="w-14 lg:w-auto"
+          src={job.logo}
+          alt="company logo"
+          width="88px"
+          height="88px"
+        />
       </div>
       <div
         id="job-info"
@@ -47,12 +55,12 @@ export default function Card({
             {job.company}
           </span>
           {job.new && (
-            <span className="bg-cyan text-white text-xs px-2 py-1 mr-2 rounded-xl">
+            <span className="bg-cyan text-white text-xs px-3 py-2 mr-2 rounded-xl inline-block leading-1 h-7">
               NEW!
             </span>
           )}
           {job.featured && (
-            <span className="bg-cyan-darkest text-white text-xs px-2 py-1 rounded-xl">
+            <span className="bg-cyan-darkest text-white text-xs px-3 py-2 rounded-xl inline-block leading-1 h-7">
               FEATURED
             </span>
           )}
@@ -66,11 +74,14 @@ export default function Card({
         </h5>
         <p className="text-gray-400 text-sm">{`${job.postedAt} • ${job.contract} • ${job.location}`}</p>
       </div>
+
+      <hr className="mt-4 mb-2 lg:hidden" />
+
       <div id="tags">
         {[job.role, job.level, ...job.languages, ...job.tools].map((tag) => (
           <button
             key={tag}
-            className="ml-4 p-2 text-cyan text-sm font-semibold bg-cyan-light rounded-sm hover:bg-cyan hover:text-white cursor-pointer"
+            className="mr-4 lg:ml-4 mb-2 mt-2 p-2 text-cyan text-sm font-semibold bg-cyan-light rounded-sm hover:bg-cyan hover:text-white cursor-pointer"
             onClick={() => handleTagClick(tag)}
           >
             {tag}
