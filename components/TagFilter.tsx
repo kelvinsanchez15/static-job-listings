@@ -5,6 +5,14 @@ export default function TagFilter({
   selectedJobTags: string[];
   setSelectedJobTags: React.Dispatch<React.SetStateAction<string[]>>;
 }) {
+  const handleDeleteButtonClick = (currentTag: string) => {
+    setSelectedJobTags([
+      ...selectedJobTags.filter((selectedTag) => selectedTag !== currentTag),
+    ]);
+  };
+
+  const handleClearButtonClick = () => setSelectedJobTags([]);
+
   return (
     <div className="bg-white rounded-md px-10 py-6 mb-10 shadow-lg flex justify-between -mt-24">
       <div id="filter">
@@ -14,7 +22,10 @@ export default function TagFilter({
             className="mr-4 inline-flex bg-cyan-light rounded-sm overflow-hidden"
           >
             <span className="p-2 text-cyan text-sm font-semibold">{tag}</span>
-            <button className="bg-cyan px-3 hover:bg-cyan-darkest">
+            <button
+              onClick={() => handleDeleteButtonClick(tag)}
+              className="bg-cyan px-3 hover:bg-cyan-darkest"
+            >
               <img src="/images/icon-remove.svg" alt="" />
             </button>
           </div>
@@ -22,7 +33,7 @@ export default function TagFilter({
       </div>
 
       <button
-        onClick={() => setSelectedJobTags([])}
+        onClick={handleClearButtonClick}
         className="text-sm text-cyan font-bold hover:underline"
       >
         Clear
