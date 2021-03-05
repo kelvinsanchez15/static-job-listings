@@ -43,7 +43,10 @@ export default function Card({ job }: { job: Job }) {
           )}
         </div>
 
-        <h5 id="job-position" className="font-bold text-black">
+        <h5
+          id="job-position"
+          className="font-bold text-black hover:text-cyan cursor-pointer"
+        >
           {job.position}
         </h5>
         <p className="text-gray-400 text-sm">{`${job.postedAt} • ${job.contract} • ${job.location}`}</p>
@@ -52,7 +55,7 @@ export default function Card({ job }: { job: Job }) {
         {[job.role, job.level, ...job.languages].map((tag) => (
           <span
             key={tag}
-            className="ml-4 p-2 text-cyan text-sm font-semibold bg-cyan-light rounded-sm"
+            className="ml-4 p-2 text-cyan text-sm font-semibold bg-cyan-light rounded-sm hover:bg-cyan hover:text-white cursor-pointer"
           >
             {tag}
           </span>
