@@ -36,7 +36,7 @@ export default function Card({
       p-6 mb-6 shadow-lg ${job.featured && 'border-l-4 border-cyan'}`}
     >
       <div id="logo" className="mr-5">
-        <img src={job.logo} alt="company logo" />
+        <img src={job.logo} alt="company logo" width="88px" height="88px" />
       </div>
       <div
         id="job-info"
