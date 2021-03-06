@@ -42,8 +42,8 @@ export default function Card({
           className="w-14 lg:w-auto"
           src={job.logo}
           alt="company logo"
-          width="88px"
-          height="88px"
+          width={88}
+          height={88}
         />
       </div>
       {/* Job info */}
