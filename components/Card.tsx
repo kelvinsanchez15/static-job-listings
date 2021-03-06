@@ -31,13 +31,13 @@ export default function Card({
 
   return (
     <div
-      id="card"
       className={`flex flex-col lg:flex-row lg:items-center bg-white rounded-md 
       p-4 lg:p-7 mb-12 lg:mb-6 shadow-lg ${
         job.featured && 'border-l-4 border-cyan'
       }`}
     >
-      <div id="logo" className="mr-5 -mt-11 lg:mt-0">
+      {/* Company logo */}
+      <div className="mr-5 -mt-11 lg:mt-0">
         <img
           className="w-14 lg:w-auto"
           src={job.logo}
@@ -46,12 +46,10 @@ export default function Card({
           height="88px"
         />
       </div>
-      <div
-        id="job-info"
-        className="flex-grow flex flex-col justify-around h-24"
-      >
+      {/* Job info */}
+      <div className="flex-grow flex flex-col justify-around h-24">
         <div>
-          <span id="company-name" className="text-cyan text-sm font-bold mr-4">
+          <span className="text-cyan text-sm font-bold mr-4">
             {job.company}
           </span>
           {job.new && (
@@ -66,10 +64,7 @@ export default function Card({
           )}
         </div>
 
-        <h5
-          id="job-position"
-          className="font-bold text-black hover:text-cyan cursor-pointer"
-        >
+        <h5 className="font-bold text-black hover:text-cyan cursor-pointer">
           {job.position}
         </h5>
         <p className="text-gray-400 text-sm">{`${job.postedAt} • ${job.contract} • ${job.location}`}</p>
@@ -77,7 +72,8 @@ export default function Card({
 
       <hr className="mt-4 mb-2 lg:hidden" />
 
-      <div id="tags">
+      {/* Job tags */}
+      <div>
         {[job.role, job.level, ...job.languages, ...job.tools].map((tag) => (
           <button
             key={tag}
